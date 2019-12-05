@@ -19,5 +19,5 @@ LABEL io.openshift.tags="builder, httpd, httpd24, httpd-proxy"
 
 # Add the proxy instruction to the httpd.conf
 COPY ./proxy-directive.conf /etc/httpd/conf.modules.d
-RUN cat /etc/httpd/conf.modules.d/00-proxy.conf /etc/httpd/conf.modules.d/proxy-directive.conf > /etc/httpd/conf.modules.d/01-proxy.conf
-RUN rm /etc/httpd/conf.modules.d/00-proxy.conf
+RUN cat /etc/httpd/conf.modules.d/00-proxy.conf /etc/httpd/conf.modules.d/proxy-directive.conf > /etc/httpd/conf.modules.d/01-proxy.conf && \
+    rm /etc/httpd/conf.modules.d/00-proxy.conf
